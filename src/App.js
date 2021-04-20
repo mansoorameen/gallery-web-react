@@ -25,7 +25,7 @@ function App() {
 
     <div className="title">
       <div>
-      <h1>Gallery</h1> </div>
+      <h1>Online Gallery</h1> </div>
       <div className="switch">
       <input className="toggle" type="checkbox" onClick={() => themeToggler()} />
       </div>
