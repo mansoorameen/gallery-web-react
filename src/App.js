@@ -31,6 +31,7 @@ function App() {
       </div>
 
       <h2>Pictures</h2>
+      <p>Find what people are sharing</p>
     </div>
       {/* <Title/> */}
       <UploadForm />
