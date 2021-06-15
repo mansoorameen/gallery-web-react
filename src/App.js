@@ -24,13 +24,13 @@ function App() {
     <StyledApp className="App">
 
     <div className="title">
-      <div>
-      <h1>Online Gallery</h1> </div>
+      {/* <div>
+      <h1>Online Gallery</h1> </div> */}
       <div className="switch">
       <input className="toggle" type="checkbox" onClick={() => themeToggler()} />
       </div>
 
-      <h2>Pictures</h2>
+      <h1>Gallery</h1>
       <p>Find what people are sharing</p>
     </div>
       {/* <Title/> */}
