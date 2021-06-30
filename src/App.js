@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ImageGrid from './comps/ImageGrid';
 import Modal from './comps/Modal';
 // import Title from './comps/Title'; 
@@ -11,12 +11,26 @@ const StyledApp = styled.div``;
 function App() {
 
   const [ selectedImg, setSelectedImg ] = useState(null);
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("");
 
   const themeToggler = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
-  };
 
+  };
+  
+  useEffect(()=>{
+    const data = localStorage.getItem('data')
+    
+    if(data){
+      setTheme(JSON.parse(data))
+     }
+    
+    },[])
+    
+    useEffect(()=>{
+      localStorage.setItem('data',JSON.stringify(theme))
+    })
+ 
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
     <GlobalStyles />
