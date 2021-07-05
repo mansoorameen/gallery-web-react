@@ -1,22 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import ImageGrid from './comps/ImageGrid';
 import Modal from './comps/Modal';
-// import Title from './comps/Title'; 
 import UploadForm from './comps/UploadForm';
 import styled, { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme, GlobalStyles } from "./themes.js";
+import { lightTheme, darkTheme, GlobalStyles } from "./comps/theme/GlobalStyles";
+import Toggler from './comps/theme/Toggler';
 
 const StyledApp = styled.div``;
 
 function App() {
 
   const [ selectedImg, setSelectedImg ] = useState(null);
-  const [theme, setTheme] = useState("");
-
-  const themeToggler = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
-
-  };
+  const [theme, setTheme] = useState("light");
   
   useEffect(()=>{
     const data = localStorage.getItem('data')
@@ -24,7 +19,6 @@ function App() {
     if(data){
       setTheme(JSON.parse(data))
      }
-    
     },[])
     
     useEffect(()=>{
@@ -38,16 +32,10 @@ function App() {
     <StyledApp className="App">
 
     <div className="title">
-      {/* <div>
-      <h1>Online Gallery</h1> </div> */}
-      <div className="switch">
-      <input className="toggle" type="checkbox" onClick={() => themeToggler()} />
-      </div>
-
+      <Toggler theme={theme} setTheme={setTheme} />
       <h1>Gallery</h1>
       <p>Find what people are sharing</p>
     </div>
-      {/* <Title/> */}
       <UploadForm />
       <ImageGrid setSelectedImg={setSelectedImg} />
       { selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} /> }
