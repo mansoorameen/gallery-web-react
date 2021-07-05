@@ -1,6 +1,5 @@
 import React from 'react';
-import styled, { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme, GlobalStyles } from "./GlobalStyles"
+import styled from "styled-components";
 
 
 let Sun, Moon;
