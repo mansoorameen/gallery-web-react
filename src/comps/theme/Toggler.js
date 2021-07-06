@@ -19,6 +19,7 @@ export default function Toggler({ theme, setTheme }) {
     <div onClick={themeToggler}>
       {theme === "light" ? (
         <Moon
+          cursor= 'pointer'
           xmlns="http://www.w3.org/2000/svg"
           width="48"
           height="48"
@@ -34,6 +35,7 @@ export default function Toggler({ theme, setTheme }) {
         </Moon>
       ) : (
         <Sun
+          cursor= 'pointer'
           xmlns="http://www.w3.org/2000/svg"
           width="48"
           height="48"

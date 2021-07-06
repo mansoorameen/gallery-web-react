@@ -5,6 +5,7 @@ import UploadForm from './comps/UploadForm';
 import styled, { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme, GlobalStyles } from "./comps/theme/GlobalStyles";
 import Toggler from './comps/theme/Toggler';
+import ScrollTopIcon from './comps/ScrollTopIcon';
 
 const StyledApp = styled.div``;
 
@@ -37,6 +38,7 @@ function App() {
       <p>Find what people are sharing</p>
     </div>
       <UploadForm />
+      <ScrollTopIcon />
       <ImageGrid setSelectedImg={setSelectedImg} />
       { selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} /> }
     </StyledApp>
